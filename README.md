@@ -53,7 +53,8 @@ Meteor.userId()
 
 ## Import from [tosdr-build] (https://github.com/tosdr/tosdr-build)
 
-Please see [.tools/import.sh](.tools/import.sh)
+Please see [.tools/import.sh](.tools/import.sh). You may need to run
+`apt-get install mongodb-clients` or equivalent, for the mongoimport tool it uses.
 
 ## Publish/Export
 
