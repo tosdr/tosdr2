@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM node
 RUN apt-get update \
 	&& apt-get install -yq \
 		curl \
@@ -6,8 +6,8 @@ RUN apt-get update \
 		mongodb-clients
 RUN curl https://install.meteor.com/ | sh
 
-COPY . tosdr2/
 RUN git clone https://github.com/tosdr/tosdr-build
+RUN git clone https://github.com/tosdr/tosdr2
 
 EXPOSE 3000
 CMD cd tosdr2 && meteor
