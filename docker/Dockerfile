@@ -14,4 +14,4 @@ EXPOSE 3000
 
 VOLUMES [ "/tosdr-build", "/dump" ]
 
-CMD cd /tosdr2 && sh ./run.sh
+CMD cd /tosdr2 && git checkout dev && sh ./run.sh
