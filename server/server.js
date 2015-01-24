@@ -62,12 +62,12 @@ function prettyStringify(object) {
 
 function exportTopicsToFileSystem(baseDir) {
   console.log('Start to export topics ...');
-  exportCollectionToFileSystem(Topics, baseDir, 'topics');
+  exportCollectionToFileSystem(Topics, baseDir, 'topics', {});
 }
 
 function exportServicesToFileSystem(baseDir) {
   console.log('Start to export services ...');
-  exportCollectionToFileSystem(Services, baseDir, 'services');
+  exportCollectionToFileSystem(Services, baseDir, 'services', {});
 }
 
 function exportApprovedPointsToFileSystem(baseDir) {
