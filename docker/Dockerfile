@@ -12,6 +12,6 @@ RUN git clone https://github.com/tosdr/tosdr2
 
 EXPOSE 3000
 
-VOLUMES [ "/tosdr-build", "/dump" ]
+VOLUME [ "/tosdr-build", "/dump" ]
 
 CMD cd /tosdr2 && git checkout dev && sh ./run.sh
