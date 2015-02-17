@@ -7,7 +7,7 @@ cd .tools
 sh ./import.sh
 
 sleep 30
-cd /
+cd /data
 while (true); do
   sleep 60;
   mongodump --port 3001;
