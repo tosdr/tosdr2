@@ -21,6 +21,10 @@ Meteor.publish(null, function () {
   }
 });
 
+Accounts.config({
+  sendVerificationEmail: true
+});
+
 Meteor.methods({
   publishToApi: function () {
     if (!utils.isModerator()) {

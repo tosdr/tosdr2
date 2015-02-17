@@ -1,14 +1,7 @@
 #!/bin/bash
 
-meteor &
+if [! -f /importDone ]; then
+  sh /tosdr2/import.sh &
+fi
 
-sleep 30
-cd .tools
-sh ./import.sh
-
-sleep 30
-cd /
-while (true); do
-  sleep 60;
-  mongodump --port 3001;
-done
+meteor --port 80
