@@ -1,6 +1,6 @@
 #!/bin/bash
 
-meteor &
+meteor --port 80 &
 
 sleep 30
 cd .tools
