@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd /data
-mongodump --port 3001;
+mongodump --port 81;
