@@ -7,7 +7,7 @@
 #  meteor mongo
 #  db.points.remove();db.services.remove();db.topics.remove();
 
-MONGO_SERVER="localhost:3001"
+MONGO_SERVER="localhost:81"
 
 node prepare-import.js
 mongoimport -h $MONGO_SERVER --db meteor --collection topics --jsonArray --file /tmp/topics.json
