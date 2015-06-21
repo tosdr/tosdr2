@@ -61,3 +61,9 @@ Please see [.tools/import.sh](.tools/import.sh). You may need to run
 As moderator you can export (=publish) points, services and topics to the file system.
 Currently it's written to '/tmp/tosdr'. The exported files should be compatible with
 the one imported from tosdr-build.
+
+## License
+
+AGPL-3.0+ (GNU Affero General Public License, version 3 or later)
+
+See https://tosdr.org/legal.html for more details on the legal aspects of the project.
