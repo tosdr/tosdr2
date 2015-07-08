@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 
-var TOSDR_BUILD_SCR_DIR = '../../tosdr-build/src';
+var TOSDR_BUILD_SCR_DIR = '/tosdr-build/src';
 
 function useIdAs_Id(inputJsonString) {
   var object = JSON.parse(inputJsonString);
