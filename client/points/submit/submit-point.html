@@ -1,15 +1,15 @@
 <template name="submitPoint">
-    <h2>Submit a point about a clause</h2>
+    <h2>{{_ "submit_point_clause"}}</h2>
     <section id="submit-point-form">
         <form class="submitForm" role="form">
             {{>editPointForm}}
             <div class="form-actions">
-                <button class="btn btn-primary btn-large" id="postPoint">Send</button>
-                <span class="help-user">Submitting as {{currentUserEmailAddress}} <a href="" class="signoutButton">(Not your email
-                    address? Log out!)</a></span></div>
+                <button class="btn btn-primary btn-large" id="postPoint">{{_ "send"}}</button>
+
+                <span class="help-user">{{_ "submitting_as"}} {{currentUserEmailAddress}} <a href="" class="signoutButton">{{_ "not_your_email"}}</a></span></div>
         </form>
 
-        <p>Your contribution will be published under <a href="https://tosdr.org/legal.html" target="_blank">a Creative Commons BY-SA license</a>.</p>
+        <p>{{_ "contribution_published"}} <a href="https://tosdr.org/legal.html" target="_blank">Creative Commons BY-SA license</a>.</p>
 
     </section>
 </template>

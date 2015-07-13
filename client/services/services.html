@@ -1,5 +1,5 @@
 <template name="services">
-    <h2>Services</h2>
+    <h2>{{_ "services"}}</h2>
     <ul>
         {{#each this}}
             {{>serviceListItem}}
@@ -10,13 +10,13 @@
 <template name="serviceListItem">
     <li>
         ID: {{id}} <br/>
-        Name: {{name}} <br/>
-        Type: {{type}} <br/>
-        Urls: {{urls}} <br/>
-        SubmittedBy: {{submittedBy}} <br/>
+        {{_ "name"}}: {{name}} <br/>
+        {{_ "type"}}: {{type}} <br/>
+        {{_ "urls"}}: {{urls}} <br/>
+        {{_ "submitted_by"}}: {{submittedBy}} <br/>
         {{#if isModerator}}
-            <button class="deleteButton btn btn-danger">Delete</button>
-            <a href="{{pathFor 'editService'}}">Edit</a>
+            <button class="deleteButton btn btn-danger">{{_ "delete"}}</button>
+            <a href="{{pathFor 'editService'}}">{{_ "edit"}}</a>
         {{/if}}
     </li>
 </template>

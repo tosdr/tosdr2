@@ -1,13 +1,10 @@
 <template name="publish">
-    <h2>Publish to API</h2>
+    <h2>{{_ "publish_to_API"}}</h2>
 
-    <p>
-        Publishing writes the complete database (excluding non-approved points) to the file system,
-        from where it can be served as static web content.
-    </p>
+    <p>{{_ "publish_warning"}}</p>
     {{#if isPublishing}}
-        Publishing ...
+        {{_ "publishing"}}
     {{else}}
-        <button class="btn btn-primary publishButton">Publish</button>
+        <button class="btn btn-primary publishButton">{{_ "publish"}}</button>
     {{/if}}
 </template>
