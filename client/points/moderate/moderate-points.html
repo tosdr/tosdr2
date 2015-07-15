@@ -1,14 +1,14 @@
 <template name="moderatePoints">
-    <h2>Moderate Points</h2>
+    <h2>{{_ "moderate_points"}}</h2>
 
     <form class="filterForm">
         <div class="form-group">
-            <label for="approvedFilter">Approved:</label>
+            <label for="approvedFilter">{{_ "approved"}}:</label>
 
             <select id="approvedFilter" class="form-control" value="{{query.approved}}">
-                <option value="">All</option>
-                <option value="true" {{ifQueryParameterThenSelected 'approved' true}}>Approved</option>
-                <option value="false" {{ifQueryParameterThenSelected 'approved' false}}>Unapproved</option>
+                <option value="">{{_ "all"}}</option>
+                <option value="true" {{ifQueryParameterThenSelected 'approved' true}}>{{_ "approved"}}</option>
+                <option value="false" {{ifQueryParameterThenSelected 'approved' false}}>{{_ "unapproved"}}</option>
             </select>
         </div>
     </form>
@@ -23,18 +23,10 @@
 </template>
 
 <template name="moderatePoint">
-    _ID: {{_id}} <br/>
-    ID: {{id}} <br/>
-    Title: {{title}} <br/>
-    Topics: {{topics}} <br/>
-    Services: {{services}} <br/>
-    Point: {{tosdr.point}} <br/>
-    Summary: {{tosdr.tldr}} <br/>
-    Sources: {{tosdr.sources}} <br/>
-    submittedBy: {{submittedBy}} <br/>
+    {{>pointListItem}}
     {{#unless approved}}
-        <button class="approveButton btn btn-success">Approve</button>
+      <button class="approveButton btn btn-success">{{_ "approve"}}</button>
     {{/unless}}
-    <button class="deleteButton btn btn-danger">Delete</button>
-    <a href="{{pathFor 'editPoint'}}">Edit</a>
+    <button class="deleteButton btn btn-danger">{{_ "delete"}}</button>
+    <a href="{{pathFor 'editPoint'}}">{{_ "edit"}}</a>
 </template>

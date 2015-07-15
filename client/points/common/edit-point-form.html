@@ -1,34 +1,34 @@
 <template name="editPointForm">
     <fieldset>
         <div class="form-group">
-            <label for="title">Title: {{title2}}</label>
+            <label for="title">{{_ "title"}}: {{title2}}</label>
             <input type="text" class="form-control" id="titleField" name="title" required=""
-                   placeholder="e.g. “This service tracks you on other websites” or “Broad copyright license on your content”"
+                    placeholder="{{_ "title_placeholder"}}"
                     value="{{title}}">
         </div>
 
         <div class="form-group">
             <label class="radio-inline good"><input type="radio" name="point" id="pointGood"
-                                                    value="good" {{pointChecked 'good'}}>Good</label>
+                                                    value="good" {{pointChecked 'good'}}>{{_ "good"}}</label>
             <label class="radio-inline neutral"><input type="radio" name="point" id="pointNeutral"
-                                                       value="neutral" {{pointChecked 'neutral'}}>Neutral</label>
+                                                       value="neutral" {{pointChecked 'neutral'}}>{{_ "neutral"}}</label>
             <label class="radio-inline bad"><input type="radio" required="" name="point" id="pointBad"
-                                                   value="bad" {{pointChecked 'bad'}}>Bad</label>
+                                                   value="bad" {{pointChecked 'bad'}}>{{_ "bad"}}</label>
             <label class="radio-inline blocker"><input type="radio" name="point" id="pointBlocker"
-                                                       value="blocker" {{pointChecked 'blocker'}}>Blocker</label>
+                                                       value="blocker" {{pointChecked 'blocker'}}>{{_ "blocker"}}</label>
         </div>
 
         <div class="form-group">
-            <label for="summary">Please summarise this clause <a href="#FIXME" target="_blank"
+            <label for="summary">{{_ "please_summarise"}} <a href="#FIXME" target="_blank"
                                                                  class="markdownparser hidden until the feature is made">Parsed
                 as Markdown</a></label>
 
             <textarea name="summary" id="summaryField" required="" class="form-control"
-                      placeholder="What the clause in the terms does. Try not to make more than 5 sentences, but sometimes more is needed. Be creative. Feel free to include some quotes from the terms directly. It is very important that it is easy to understand and written in plain English.">{{tosdr.tldr}}</textarea>
+                      placeholder="{{_ "what_the_clause"}}">{{tosdr.tldr}}</textarea>
         </div>
 
         <div class="form-group">
-            <label for="services">Service(s) to which the point applies</label>
+            <label for="services">{{_ "point_applies"}}</label>
 
             <div class="select2-wrapper">
                 <select name="services" id="services" multiple class="form-control input-lg select2">
@@ -41,14 +41,14 @@
 
         <!--          You need to suggest services which have a file in services/ if a user types a service which does not exist in the database, redirect him or her to the service form-->
         <div class="form-group">
-            <label for="source">Source</label>
+            <label for="source">{{_ "source"}}</label>
             <input type="url" id="sourceField" class="form-control" name="source"
                    placeholder="http://www.example.com/tos" value="{{source}}">
         </div>
 
 
         <div class="form-group">
-            <label for="topics">Topics</label>
+            <label for="topics">{{_ "topics"}}</label>
 
             <div class="select2-wrapper">
                 <select name="topics" id="topics" multiple class="form-control input-lg select2">

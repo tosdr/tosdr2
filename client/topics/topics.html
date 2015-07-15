@@ -1,5 +1,5 @@
 <template name="topics">
-    <h2>Topics</h2>
+    <h2>{{_ "topics"}}</h2>
     <ul>
         {{#each this}}
             {{> topicListItem}}
@@ -10,15 +10,15 @@
 <template name="topicListItem">
     <li>
         ID: {{id}} <br/>
-        Title: {{title}} <br/>
-        Subtitle: {{subtitle}} <br/>
-        Description: {{description}} <br/>
-        Type: {{type}} <br/>
-        Category: {{category}} <br/>
-        SubmittedBy: {{submittedBy}} <br/>
+        {{_ "title"}}: {{title}} <br/>
+        {{_ "subtitle"}}: {{subtitle}} <br/>
+        {{_ "description"}}: {{description}} <br/>
+        {{_ "type"}}: {{type}} <br/>
+        {{_ "category"}}: {{category}} <br/>
+        {{_ "submittedBy"}}: {{submittedBy}} <br/>
         {{#if isModerator}}
-            <button class="deleteButton btn btn-danger">Delete</button>
-            <a href="{{pathFor 'editTopic'}}">Edit</a>
+            <button class="deleteButton btn btn-danger">{{_ "delete"}}</button>
+            <a href="{{pathFor 'editTopic'}}">{{_ "edit"}}</a>
         {{/if}}
     </li>
 </template>

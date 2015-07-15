@@ -1,5 +1,5 @@
 <template name="points">
-    <h2>All Points</h2>
+    <h2>{{_ "all_points"}}</h2>
     <ul>
         {{#each this}}
           {{>pointListItem}}
@@ -11,13 +11,13 @@
     <li>
         _ID: {{_id}} <br/>
         ID: {{id}} <br/>
-        Title: {{title}} <br/>
-        Topics: {{topics}} <br/>
-        Services: {{services}} <br/>
-        Point: {{tosdr.point}} <br/>
-        Summary: {{tosdr.tldr}} <br/>
-        Sources: {{tosdr.sources}} <br/>
-        Approved: {{approved}} <br/>
-        submittedBy: {{submittedBy}} <br/>
+        {{_ "title"}}: {{title}} <br/>
+        {{_ "topics"}}: {{topics}} <br/>
+        {{_ "services"}}: {{services}} <br/>
+        {{_ "point"}}: {{tosdr.point}} <br/>
+        {{_ "summary"}}: {{tosdr.tldr}} <br/>
+        {{_ "sources"}}: {{tosdr.sources}} <br/>
+        {{_ "approved"}}: {{approved}} <br/>
+        {{_ "submitted_by"}}: {{submittedBy}} <br/>
     </li>
 </template>

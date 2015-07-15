@@ -12,34 +12,34 @@
     {{/if}}
 
     <div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">{{_ "title"}}</label>
         <input class="form-control" id="title" required value="{{title}}">
     </div>
     <div class="form-group">
-        <label for="subtitle">Subtitle</label>
+        <label for="subtitle">{{_ "subtitle"}}</label>
         <input class="form-control" id="subtitle" required value="{{subtitle}}">
     </div>
     <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description">{{_ "description"}}</label>
         <textarea id="description" class="form-control" required rows="4">{{description}}</textarea>
     </div>
     <div class="form-group">
-        <label>Type</label>
+        <label>{{_ "type"}}</label>
 
         <div>
             <label class="radio-inline">
-                <input type="radio" name="type" value="topic" required {{isTypeChecked 'topic'}}> Topic
+                <input type="radio" name="type" value="topic" required {{isTypeChecked 'topic'}}> {{_ "topic"}}
             </label>
             <label class="radio-inline">
-                <input type="radio" name="type" value="category" required {{isTypeChecked 'category'}}> Category
+                <input type="radio" name="type" value="category" required {{isTypeChecked 'category'}}> {{_ "category"}}
             </label>
         </div>
     </div>
     <div class="form-group">
-        <label for="category">Category</label>
+      <label for="category">{{_ "category"}}</label>
 
         <select id="category" class="form-control">
-            <option value="">None</option>
+            <option value="">{{_ "none"}}</option>
             {{#each categories}}
                 {{>categoryOption}}
             {{/each}}
