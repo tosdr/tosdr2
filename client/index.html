@@ -1,5 +1,13 @@
 <template name="index">
   <p>{{_ "welcome"}}</p>
-  <p>{{_ "sign_in"}}</p>
+  {{#if currentUser}}
+    {{#if isVerified}}
+      <p>{{_ "choose_menu"}}</p>
+    {{else}}
+      {{> emailNotVerified}}
+    {{/if}}
+  {{else}}
+    <p>{{_ "sign_in"}}</p>
+  {{/if}}
 </template>
 
