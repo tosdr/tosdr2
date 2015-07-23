@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash -eu
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # This script imports all valid points, services and topics from /tosdr-build/src
 # First you must start meteor
@@ -7,9 +9,9 @@
 #  meteor mongo
 #  db.points.remove();db.services.remove();db.topics.remove();
 
-MONGO_SERVER="db:27017"
+: ${MONGO_SERVER:=db:27017}
 
-node prepare-import.js
+node ${DIR}/prepare-import.js
 mongoimport -h $MONGO_SERVER --db meteor --collection topics --jsonArray --file /tmp/topics.json
 mongoimport -h $MONGO_SERVER --db meteor --collection services --jsonArray --file /tmp/services.json
 mongoimport -h $MONGO_SERVER --db meteor --collection points --jsonArray --file /tmp/points.json

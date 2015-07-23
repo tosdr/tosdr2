@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 
-var TOSDR_BUILD_SCR_DIR = '/tosdr-build/src';
+var TOSDR_BUILD_DIR = process.env.TOSDR_BUILD_DIR || path.join(__dirname, '../../tosdr-build');
 
 function useIdAs_Id(inputJsonString) {
   var object = JSON.parse(inputJsonString);
@@ -12,7 +12,7 @@ function useIdAs_Id(inputJsonString) {
 function concatJsonFiles(sourceDirectoryName, outputFilename, mapFileContent) {
   mapFileContent = mapFileContent || useIdAs_Id;
   var foundIds = {};
-  var sourceDir = path.join(TOSDR_BUILD_SCR_DIR, sourceDirectoryName);
+  var sourceDir = path.join(TOSDR_BUILD_DIR, 'src', sourceDirectoryName);
   var filenames = fs.readdirSync(sourceDir).filter(function (filename) {
     return filename.indexOf('.json') > 0;
   });

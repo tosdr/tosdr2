@@ -53,8 +53,18 @@ Meteor.userId()
 
 ## Import from [tosdr-build] (https://github.com/tosdr/tosdr-build)
 
-Please see [.tools/import.sh](.tools/import.sh). You may need to run
-`apt-get install mongodb-clients` or equivalent, for the mongoimport tool it uses.
+### Requirements
+ - You need to have mongodb-clients installed.
+(on debian like distribution, run `apt-get install mongodb-clients`)
+ - you need the tosdr-build repo: `git clone https://github.com/tosdr/tosdr-build`
+
+### How to run
+
+`.tools/import.sh`
+
+There are 2 ENV variables that might need to be set up for development environment:
+
+`MONGO_SERVER=127.0.0.1:3001 TOSDR_BUILD_DIR='/path/to/tosdr-build' .tools/import.sh`
 
 ## Publish/Export
 
