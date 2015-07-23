@@ -4,6 +4,7 @@ var path = Npm.require('path');
 Meteor.publish('points', function () {
   return Points.find();
 });
+ReactiveTable.publish('reactivePoints', Points);
 
 Meteor.publish('services', function () {
   return Services.find();

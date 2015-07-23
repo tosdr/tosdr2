@@ -1,29 +1,4 @@
-<template name="moderatePoints">
-    <h2>{{_ "moderate_points"}}</h2>
-
-    <form class="filterForm">
-        <div class="form-group">
-            <label for="approvedFilter">{{_ "approved"}}:</label>
-
-            <select id="approvedFilter" class="form-control" value="{{query.approved}}">
-                <option value="">{{_ "all"}}</option>
-                <option value="true" {{ifQueryParameterThenSelected 'approved' true}}>{{_ "approved"}}</option>
-                <option value="false" {{ifQueryParameterThenSelected 'approved' false}}>{{_ "unapproved"}}</option>
-            </select>
-        </div>
-    </form>
-
-    <ul>
-        {{#each this}}
-            <li>
-                {{>moderatePoint}}
-            </li>
-        {{/each}}
-    </ul>
-</template>
-
 <template name="moderatePoint">
-    {{>pointListItem}}
     {{#unless approved}}
       <button class="approveButton btn btn-success">{{_ "approve"}}</button>
     {{/unless}}

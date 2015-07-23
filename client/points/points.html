@@ -1,23 +1,5 @@
 <template name="points">
     <h2>{{_ "all_points"}}</h2>
-    <ul>
-        {{#each this}}
-          {{>pointListItem}}
-        {{/each}}
-    </ul>
+    {{> reactiveTable settings=settings}}
 </template>
 
-<template name="pointListItem">
-    <li>
-        _ID: {{_id}} <br/>
-        ID: {{id}} <br/>
-        {{_ "title"}}: {{title}} <br/>
-        {{_ "topics"}}: {{topics}} <br/>
-        {{_ "services"}}: {{services}} <br/>
-        {{_ "point"}}: {{tosdr.point}} <br/>
-        {{_ "summary"}}: {{tosdr.tldr}} <br/>
-        {{_ "sources"}}: {{tosdr.sources}} <br/>
-        {{_ "approved"}}: {{approved}} <br/>
-        {{_ "submitted_by"}}: {{submittedBy}} <br/>
-    </li>
-</template>
