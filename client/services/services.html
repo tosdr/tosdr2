@@ -1,23 +1,10 @@
 <template name="services">
     <h2>{{_ "services"}}</h2>
-    <ul>
-        {{#each this}}
-            {{>serviceListItem}}
-        {{/each}}
-    </ul>
+    {{> reactiveTable settings=settings}}
 </template>
 
-<template name="serviceListItem">
-    <li>
-        ID: {{id}} <br/>
-        {{_ "name"}}: {{name}} <br/>
-        {{_ "type"}}: {{type}} <br/>
-        {{_ "urls"}}: {{urls}} <br/>
-        {{_ "submitted_by"}}: {{submittedBy}} <br/>
-        {{#if isModerator}}
-            <button class="deleteButton btn btn-danger">{{_ "delete"}}</button>
-            <a href="{{pathFor 'editService'}}">{{_ "edit"}}</a>
-        {{/if}}
-    </li>
+<template name="moderateService">
+    <button class="deleteButton btn btn-danger">{{_ "delete"}}</button>
+    <a href="{{pathFor 'editService'}}">{{_ "edit"}}</a>
 </template>
 

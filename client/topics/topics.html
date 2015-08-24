@@ -1,25 +1,10 @@
 <template name="topics">
     <h2>{{_ "topics"}}</h2>
-    <ul>
-        {{#each this}}
-            {{> topicListItem}}
-        {{/each}}
-    </ul>
+    {{> reactiveTable settings=settings}}
 </template>
 
-<template name="topicListItem">
-    <li>
-        ID: {{id}} <br/>
-        {{_ "title"}}: {{title}} <br/>
-        {{_ "subtitle"}}: {{subtitle}} <br/>
-        {{_ "description"}}: {{description}} <br/>
-        {{_ "type"}}: {{type}} <br/>
-        {{_ "category"}}: {{category}} <br/>
-        {{_ "submittedBy"}}: {{submittedBy}} <br/>
-        {{#if isModerator}}
-            <button class="deleteButton btn btn-danger">{{_ "delete"}}</button>
-            <a href="{{pathFor 'editTopic'}}">{{_ "edit"}}</a>
-        {{/if}}
-    </li>
+<template name="moderateTopic">
+    <button class="deleteButton btn btn-danger">{{_ "delete"}}</button>
+    <a href="{{pathFor 'editTopic'}}">{{_ "edit"}}</a>
 </template>
 

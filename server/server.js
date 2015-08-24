@@ -5,6 +5,8 @@ Meteor.publish('points', function () {
   return Points.find();
 });
 ReactiveTable.publish('reactivePoints', Points);
+ReactiveTable.publish('reactiveServices', Services);
+ReactiveTable.publish('reactiveTopics', Topics);
 
 Meteor.publish('services', function () {
   return Services.find();
