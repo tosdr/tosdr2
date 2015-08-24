@@ -42,7 +42,11 @@ concatJsonFiles('topics', 'topics.json');
 concatJsonFiles('services', 'services.json');
 concatJsonFiles('points', 'points.json', function (pointJson) {
   var point = JSON.parse(pointJson);
-  point.approved = true;
+  if (!point.tosdr.irrelevant && !point.topics) {
+    point.approved = false;
+  } else {
+    point.approved = true;
+  }
   point._id = point.id;
   return JSON.stringify(point);
 });
