@@ -7,7 +7,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # You can clean all existing points, services and topics before starting the import by:
 #  meteor mongo
-#  db.points.remove();db.services.remove();db.topics.remove();
+#  db.points.remove({});db.services.remove({});db.topics.remove({});
 
 : ${MONGO_SERVER:=db:27017}
 
