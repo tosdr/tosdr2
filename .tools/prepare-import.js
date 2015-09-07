@@ -42,7 +42,7 @@ concatJsonFiles('topics', 'topics.json');
 concatJsonFiles('services', 'services.json');
 concatJsonFiles('points', 'points.json', function (pointJson) {
   var point = JSON.parse(pointJson);
-  if (!point.tosdr.irrelevant && !point.topics) {
+  if (point.tosdr.irrelevant && !point.topics) {
     point.approved = false;
   } else {
     point.approved = true;
