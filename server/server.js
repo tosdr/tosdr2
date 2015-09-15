@@ -28,6 +28,8 @@ Accounts.config({
   sendVerificationEmail: true
 });
 
+Accounts.emailTemplates.from = "ToSDR edit application <automatic-emails@tosdr.org>";
+
 Meteor.methods({
   publishToApi: function () {
     if (!utils.isModerator()) {
