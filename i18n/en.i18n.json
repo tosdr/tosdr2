@@ -7,7 +7,7 @@
   "point": "Point",
   "points": "Points",
   "submit_point": "Submit Point",
-  "submit_point_clause": "Submit Point about a clause",
+  "submit_point_clause": "Submit an entry about a point in the terms",
   "moderate_points": "Moderate Points",
   "unapproved_points": "Unapproved Points",
   "edit_a_point": "Edit a point about a clause",
@@ -56,8 +56,8 @@
   "neutral": "Neutral",
   "blocker": "Blocker",
   "none": "None",
-  "please_summarise": "Please summarise this clause",
-  "what_the_clause": "What the clause in the terms does. Try not to make more than 5 sentences, but sometimes more is needed. Be creative. Feel free to include some quotes from the terms directly. It is very important that it is easy to understand and written in plain English.",
+  "please_summarise": "Please summarise the point",
+  "what_the_clause": "What the clause in the terms does or says. Try not to write more than 5 sentences. Be creative. Feel free to include some quotes from the terms’ clause directly. But the most important is that it’s easy to understand and written in plain English.",
   "point_applies": "Service(s) to which the point applies",
-  "user_not_verified": "Check your email! If you did not receive a registration email, then please contact team at tosdr.org."
+  "user_not_verified": "Check your email! If you did not receive a registration email, then please contact editapp+issues at tosdr.org."
 }
