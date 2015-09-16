@@ -22,3 +22,7 @@ Template.editPoint.events({
     Router.go('points');
   }
 });
+
+Comments.ui.config({
+  template: 'bootstrap'
+});
