@@ -14,6 +14,6 @@ Template.editPoint.events({
     };
     console.log('Save point:', updatedPoint);
     Points.update(this._id, {$set: updatedPoint});
-    Router.go('moderatePoints');
+    Router.go('points');
   }
 });
