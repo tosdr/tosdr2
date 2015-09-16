@@ -40,7 +40,6 @@ Meteor.methods({
     console.log('Started export to file system ...');
 
     var baseDir = '/tmp/tosdr';
-    //var baseDir = '/home/shybyte/workspace/tosdr-build/src';
 
     exportTopicsToFileSystem(baseDir);
     exportServicesToFileSystem(baseDir);
