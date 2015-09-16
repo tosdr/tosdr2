@@ -26,6 +26,11 @@ Template.editPointForm.helpers({
     } else {
       return '';
     }
+  },
+  disabled: function () {
+    if (!utils.isModerator()) {
+      return 'disabled';
+    }
   }
 });
 

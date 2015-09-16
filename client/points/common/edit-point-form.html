@@ -4,18 +4,18 @@
             <label for="title">{{_ "title"}}: {{title2}}</label>
             <input type="text" class="form-control" id="titleField" name="title" required=""
                     placeholder="{{_ "title_placeholder"}}"
-                    value="{{title}}">
+                    value="{{title}}" {{disabled}}>
         </div>
 
         <div class="form-group">
             <label class="radio-inline good"><input type="radio" name="point" id="pointGood"
-                                                    value="good" {{pointChecked 'good'}}>{{_ "good"}}</label>
+                                                    value="good" {{pointChecked 'good'}} {{disabled}}>{{_ "good"}}</label>
             <label class="radio-inline neutral"><input type="radio" name="point" id="pointNeutral"
-                                                       value="neutral" {{pointChecked 'neutral'}}>{{_ "neutral"}}</label>
+                                                       value="neutral" {{pointChecked 'neutral'}} {{disabled}}>{{_ "neutral"}}</label>
             <label class="radio-inline bad"><input type="radio" required="" name="point" id="pointBad"
-                                                   value="bad" {{pointChecked 'bad'}}>{{_ "bad"}}</label>
+                                                   value="bad" {{pointChecked 'bad'}}>{{_ "bad"}} {{disabled}}</label>
             <label class="radio-inline blocker"><input type="radio" name="point" id="pointBlocker"
-                                                       value="blocker" {{pointChecked 'blocker'}}>{{_ "blocker"}}</label>
+                                                       value="blocker" {{pointChecked 'blocker'}} {{disabled}}>{{_ "blocker"}}</label>
         </div>
 
         <div class="form-group">
@@ -24,14 +24,14 @@
                 as Markdown</a></label>
 
             <textarea name="summary" id="summaryField" required="" class="form-control"
-                      placeholder="{{_ "what_the_clause"}}">{{tosdr.tldr}}</textarea>
+                      placeholder="{{_ "what_the_clause"}}" {{disabled}}>{{tosdr.tldr}}</textarea>
         </div>
 
         <div class="form-group">
             <label for="services">{{_ "point_applies"}}</label>
 
             <div class="select2-wrapper">
-                <select name="services" id="services" multiple class="form-control input-lg select2">
+                <select name="services" id="services" multiple class="form-control input-lg select2" {{disabled}}>
                     {{#each services}}
                         {{>serviceOption}}
                     {{/each}}
@@ -43,7 +43,7 @@
         <div class="form-group">
             <label for="source">{{_ "source"}}</label>
             <input type="url" id="sourceField" class="form-control" name="source"
-                   placeholder="http://www.example.com/tos" value="{{source}}">
+                   placeholder="http://www.example.com/tos" value="{{source}}" {{disabled}}>
         </div>
 
 
@@ -51,7 +51,7 @@
             <label for="topics">{{_ "topics"}}</label>
 
             <div class="select2-wrapper">
-                <select name="topics" id="topics" multiple class="form-control input-lg select2">
+                <select name="topics" id="topics" multiple class="form-control input-lg select2" {{disabled}}>
                     {{#each topics}}
                         {{>topicOption}}
                     {{/each}}

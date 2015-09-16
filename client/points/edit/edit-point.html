@@ -3,9 +3,11 @@
     <section id="submit-point-form">
         <form class="submitForm" role="form">
             {{>editPointForm}}
+            {{#if isModerator}}
             <div class="form-actions">
                 <button class="btn btn-primary btn-large" id="savePoint">{{_ "save"}}</button>
             </div>
+            {{/if}}
         </form>
     </section>
 </template>

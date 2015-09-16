@@ -44,3 +44,9 @@ Template.points.helpers({
   }
 });
 
+Template.points.events({
+  'click .reactive-table tbody tr': function (event) {
+    var point = this;
+    Router.go('/points/edit/' + point._id);
+  }
+});
