@@ -26,13 +26,9 @@ Template.points.helpers({
           fn: function(value) {return value.sources},
           label: TAPi18n.__('sources')
         }, {
-          key: 'approved',
-          label: TAPi18n.__('approved')
-        }, {
           key: 'submittedBy',
           label: TAPi18n.__('submitted_by')
         }, {
-          key: 'approved',
           label: TAPi18n.__('action'),
           tmpl: Template.moderatePoint,
           hidden: function() {return !utils.isModerator()}

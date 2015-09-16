@@ -1,7 +1,3 @@
 <template name="moderatePoint">
-    {{#unless approved}}
-      <button class="approveButton btn btn-success">{{_ "approve"}}</button>
-    {{/unless}}
-    <button class="deleteButton btn btn-danger">{{_ "delete"}}</button>
     <a href="{{pathFor 'editPoint'}}">{{_ "edit"}}</a>
 </template>
