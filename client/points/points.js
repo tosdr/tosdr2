@@ -29,6 +29,12 @@ Template.points.helpers({
           key: 'submittedBy',
           label: TAPi18n.__('submitted_by')
         }, {
+          key: 'needModeration',
+          label: 'to be moderated',
+          sortOrder: 0,
+          sortDirection: 'descending',
+          fn: function(value) {return value.toString();}
+        }, {
           label: TAPi18n.__('action'),
           tmpl: Template.moderatePoint,
           hidden: function() {return !utils.isModerator()}
