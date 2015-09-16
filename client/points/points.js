@@ -36,7 +36,7 @@ Template.points.helpers({
           fn: function(value) {return value.toString();}
         }, {
           label: TAPi18n.__('action'),
-          tmpl: Template.moderatePoint,
+          tmpl: Template.editPointButton,
           hidden: function() {return !utils.isModerator()}
         }
       ]
