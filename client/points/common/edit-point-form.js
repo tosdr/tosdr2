@@ -11,6 +11,15 @@ Template.editPointForm.helpers({
   pointChecked: function (pointValue) {
     return this.tosdr.point === pointValue ? 'checked' : '';
   },
+  pointBinding: function (pointValue) {
+    return this.tosdr.binding ? 'checked' : '';
+  },
+  pointIrrelevant: function (pointValue) {
+    return this.tosdr.irrelevant ? 'checked' : '';
+  },
+  pointDisputed: function (pointValue) {
+    return this.tosdr.disputed ? 'checked' : '';
+  },
   source: function () {
     if (this.tosdr.sources && this.tosdr.sources[0]) {
       return this.tosdr.sources[0];

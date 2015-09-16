@@ -58,6 +58,36 @@
                 </select>
             </div>
         </div>
+        
+        {{#if isModerator}}
+        <div class="form-group">
+          <label for="score">Score</label>
+          <input type="number" id="scoreField" class="form-control" name="score"
+                 value="{{tosdr.score}}">
+        </div>
+        <div class="form-group">
+          <label for="case">Case</label>
+          <input type="text" id="caseField" class="form-control" name="case"
+                 placeholder="may sell your data in merger" value="{{tosdr.case}}">
+        </div>
+        <div class="form-group">
+          <label for="binding">Binding</label>
+          <input type="checkbox" name="binding" {{ pointBinding }}>
+        </div>
+        <div class="form-group">
+          <label for="irrelevant">Irrelevant</label>
+          <input type="checkbox" name="irrelevant" {{ pointIrrelevant }}>
+        </div>
+        <div class="form-group">
+          <label for="disputed">Disputed</label>
+          <input type="checkbox" name="disputed" {{ pointDisputed }}>
+        </div>
+        <div class="form-group">
+          <label for="reason">Reason</label>
+          <input type="text" id="reasonField" class="form-control" name="reason"
+                 placeholder="Why is it disputed or irrelevant?" value="{{tosdr.reason}}">
+        </div>
+        {{/if}}
 
     </fieldset>
 

@@ -6,7 +6,11 @@ Template.editPoint.events({
       title: template.find('#titleField').value,
       topics: $(template.find('#topics')).val(),
       tosdr: {
-        binding: true,
+        score: template.find('#scoreField').value,
+        case: template.find('#caseField').value,
+        binding: $('input[name="binding"]').is(':checked'),
+        disputed: $('input[name="disputed"]').is(':checked'),
+        irrelevant: $('input[name="irrelevant"]').is(':checked'),
         point: $('input[name="point"]:checked').val(),
         tldr: template.find('#summaryField').value,
         sources: [template.find('#sourceField').value]
