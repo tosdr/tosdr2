@@ -14,5 +14,3 @@ web:
     - db:db
   volumes:
     - logs:/home/app/logs
-  expose:
-    - "80"

@@ -1,5 +1,0 @@
-#!/bin/bash -eux
-docker-compose stop
-docker-compose kill || :
-docker-compose rm -f || :
-
