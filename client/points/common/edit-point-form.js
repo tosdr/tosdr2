@@ -28,7 +28,7 @@ Template.editPointForm.helpers({
     }
   },
   disabled: function () {
-    if (!utils.isModerator()) {
+    if (!utils.isModerator() && Iron.Location.get().path !== '/points/submit') {
       return 'disabled';
     }
   }
