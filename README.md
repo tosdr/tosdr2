@@ -68,9 +68,8 @@ There are 2 ENV variables that might need to be set up for development environme
 
 ## Publish/Export
 
-As moderator you can export (=publish) points, services and topics to the file system.
-Currently it's written to '/tmp/tosdr'. The exported files should be compatible with
-the one imported from tosdr-build.
+As moderator you can export (=publish) points, services and topics to a downloadable
+zip-file. The exported files should be compatible with the one imported from tosdr-build.
 
 ## License
 
