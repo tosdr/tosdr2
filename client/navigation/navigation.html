@@ -24,9 +24,7 @@
                                aria-expanded="false">{{_ "services"}}<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{pathFor 'services'}}">{{_ "show_all_services"}}</a></li>
-                                {{#if isModerator}}
-                                    <li><a href="{{pathFor 'createService'}}">{{_ "create_new_service"}}</a></li>
-                                {{/if}}
+                                <li><a href="{{pathFor 'createService'}}">{{_ "create_new_service"}}</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
