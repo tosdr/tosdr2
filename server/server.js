@@ -57,7 +57,10 @@ function exportCollectionToZip(collection, zip, directoryName, mongoSelector) {
 }
 
 function withoutInternalAttributes(object) {
-  return _.omit(object, '_id', 'approved');
+  if (typeof object.id === 'undefined') {
+    object.id = object._id;
+  }
+  return _.omit(object, '_id');
 }
 
 function prettyStringify(object) {
