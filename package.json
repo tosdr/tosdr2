@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A web app to submit and review points about services for http://tosdr.org. Written in JavaScript with help of the meteor framework (https://www.meteor.com). Data is saved in a MongoDB.",
   "dependencies": {
-    "babel-runtime": "^6.20.0"
+    "adm-zip": "^0.4.7",
+    "babel-runtime": "^6.20.0",
+    "bcrypt": "^1.0.1"
   },
   "devDependencies": {},
   "scripts": {

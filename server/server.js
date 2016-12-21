@@ -1,5 +1,5 @@
-var fs = Npm.require('fs');
 var path = Npm.require('path');
+var AdmZip = Npm.require('adm-zip');
 
 Meteor.publish('points', function () {
   return Points.find();
@@ -39,24 +39,20 @@ Meteor.methods({
 
     console.log('Started export to file system ...');
 
-    var baseDir = '/tmp/tosdr';
-
-    exportTopicsToFileSystem(baseDir);
-    exportServicesToFileSystem(baseDir);
-    exportApprovedPointsToFileSystem(baseDir);
-
+    var exportFile = path.join(process.env.PWD, '/public/data.zip');
+    var zip = new AdmZip();
+    addTopics(zip);
+    addServices(zip);
+    addPoints(zip);
+    zip.writeZip(exportFile);
     console.log('Finished export to file system.');
   }
 });
 
-function exportCollectionToFileSystem(collection, baseDir, directoryName, mongoSelector) {
-  var exportDir = path.join(baseDir, directoryName);
-  mkdirp.sync(exportDir);
-
+function exportCollectionToZip(collection, zip, directoryName, mongoSelector) {
   collection.find(mongoSelector).forEach(function (collectionItem) {
-    var writeStream = fs.createWriteStream(path.join(exportDir, (collectionItem.id || collectionItem._id) + '.json'), {flags: 'w'});
-    writeStream.write(prettyStringify(withoutInternalAttributes(collectionItem)));
-    writeStream.end();
+    zip.addFile(path.join(directoryName, (collectionItem.id || collectionItem._id) + '.json'),
+        new Buffer(prettyStringify(withoutInternalAttributes(collectionItem))), '');
   });
 }
 
@@ -68,17 +64,17 @@ function prettyStringify(object) {
   return JSON.stringify(object, undefined, 2);
 }
 
-function exportTopicsToFileSystem(baseDir) {
+function addTopics(zip) {
   console.log('Start to export topics ...');
-  exportCollectionToFileSystem(Topics, baseDir, 'topics', {});
+  exportCollectionToZip(Topics, zip, 'topics', {});
 }
 
-function exportServicesToFileSystem(baseDir) {
+function addServices(zip) {
   console.log('Start to export services ...');
-  exportCollectionToFileSystem(Services, baseDir, 'services', {});
+  exportCollectionToZip(Services, zip, 'services', {});
 }
 
-function exportApprovedPointsToFileSystem(baseDir) {
-  console.log('Start to export approved points ...');
-  exportCollectionToFileSystem(Points, baseDir, 'points', {approved: true});
+function addPoints(zip) {
+  console.log('Start to export points ...');
+  exportCollectionToZip(Points, zip, 'points', {/* approved: true */});
 }
