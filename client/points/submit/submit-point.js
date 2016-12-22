@@ -13,7 +13,8 @@ Template.submitPoint.events({
         sources: [template.find('#sourceField').value]
       },
       approved: false,
-      submittedBy: Meteor.userId()
+      submittedBy: Meteor.userId(),
+      subbmittedTimestamp: new Date().getTime(),
     };
     console.log('Save new point:', newPoint);
     Points.insert(newPoint);
