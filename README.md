@@ -71,6 +71,33 @@ There are 2 ENV variables that might need to be set up for development environme
 As moderator you can export (=publish) points, services and topics to a downloadable
 zip-file. The exported files should be compatible with the one imported from tosdr-build.
 
+## Running tosdr2 locally
+
+The import described above does not work correctly if there is already data in mongodb. This
+is what I do instead when updating the mongo database in development:
+
+* (DON'T DO THIS IN PRODUCTION AS IT WILL LEAD TO DATA LOSS!) in meteor mongo, run:
+  * 'db.points.remove({})'
+  * 'db.services.remove({})'
+  * 'db.topics.remove({})'
+* Make sure tosdr-build is checked out to latest master with no uncommitted changes.
+* In your tosdr2 checkout, with meteor running, do:
+  * MONGO_SERVER=127.0.0.1:3001 .tools/import.sh
+* Go to http://localhost:3000, log in as a moderator user, click 'Publish'
+* Download data.zip
+* In your tosdr-build checkout,
+  * `cd src`
+  * `rm points/*.json`
+  * `rm services/*.json`
+  * `rm topics/*.json`
+  * `unzip -u ~/Downloads/data.zip`
+  * `chmod ugo-x */*.json`
+  * `git status`
+* If no modified files show up in `git status`, Mongo and tosdr-build json-files are in sync.
+
+You can now edit points on http://localhost:3000 and later repeat the Publish steps to update tosdr-build.
+
+
 ## License
 
 AGPL-3.0+ (GNU Affero General Public License, version 3 or later)
