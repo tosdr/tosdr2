@@ -11,7 +11,10 @@ Template.services.helpers({
     return {
       collection: 'reactiveServices',
       fields: [
-        'ID',
+        {
+          key: '_id',
+          label: TAPi18n.__('ID')
+        },
         {
           key: 'name',
           label: TAPi18n.__('name')
