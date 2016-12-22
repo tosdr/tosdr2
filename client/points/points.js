@@ -29,6 +29,9 @@ Template.points.helpers({
           key: 'submittedBy',
           label: TAPi18n.__('submitted_by')
         }, {
+          key: 'discussion',
+          label: TAPi18n.__('discussion')
+        }, {
           key: 'needModeration',
           label: 'to be moderated',
           sortOrder: 0,
