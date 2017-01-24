@@ -1,4 +1,12 @@
 <template name="curate">
-    <h2>{{_ "curate"}} <!-- {:_id} --></h2>
+    <h2>{{_ "curate"}} {{service}}</h2>
 
+    <ul>
+      {{#each points}}
+        {{> point}}
+      {{/each}}
+    </ul>
+</template>
+<template name="point">
+  <li>{{_id}}: {{title}}</li>
 </template>
