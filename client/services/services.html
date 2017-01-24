@@ -4,6 +4,7 @@
 </template>
 
 <template name="moderateService">
+    <a href="{{pathFor 'curate' _id=this._id }}">{{_ "curate"}}</a>
     <button class="deleteButton btn btn-danger">{{_ "delete"}}</button>
     <a href="{{pathFor 'editService'}}">{{_ "edit"}}</a>
 </template>
