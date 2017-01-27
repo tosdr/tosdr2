@@ -16,6 +16,10 @@ Meteor.publish('topics', function () {
   return Topics.find();
 });
 
+Meteor.publish('curate', function (serviceId) {
+  return Points.find({ services: [ serviceId ] });
+});
+
 Meteor.publish(null, function () {
   if (this.userId) {
     return Meteor.users.find({_id: this.userId}, {fields: {roles: 1}});
