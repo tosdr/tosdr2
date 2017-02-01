@@ -3,7 +3,16 @@ Template.curate.helpers({
     return this._id;
   },
   points: function() {
-    return Points.find({ services: this._id});
+    return Points.find({ services: this._id}).map(p => {
+      if (p.needModeration) {
+        p.reviewStatus = 'needModeration';
+      } else if (p.tosdr.irrelevant) {
+        p.reviewStatus = 'tosdr.irrelevant';
+      } else {
+        p.reviewStatus = 'accepted (i.e. moderated and not irrelevant)';
+      }
+      return p;
+    });
   }
 });
 
