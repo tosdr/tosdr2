@@ -43,7 +43,9 @@
                     {{/if}}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    {{> loginButtons}}
+		    <form target="nosuch" action="nosuch" onsubmit="return false;">
+		     {{> loginButtons}}
+		    </form>
                 </ul>
             </div>
 

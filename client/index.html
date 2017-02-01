@@ -8,6 +8,18 @@
     {{/if}}
   {{else}}
     <p>{{_ "sign_in"}}</p>
+    Firefox users, as a work-around for
+    <a href="https://github.com/meteor/meteor/issues/1746">a 3-year-old bug in Meteor</a>,
+    you may want to remember your password here:
+    <form method="POST">
+      <table><tr>
+        <td><label for="loginEmail">Email:</label></td><td><input type="email" name="loginEmail"></td>
+      </tr><tr>
+        <td><label for="loginPassword">Password:</label></td><td><input type="password" name="loginPassword"></td>
+      </tr><tr>
+        <td></td><td><input type="submit" value="Remember"></td>
+      </tr></table>
+    </form>
+    Please still use the button at the top right for actually logging in.
   {{/if}}
 </template>
-
