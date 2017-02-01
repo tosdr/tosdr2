@@ -3,7 +3,7 @@ Template.curate.helpers({
     return this._id;
   },
   points: function() {
-    return Points.find({ services: this._id, 'tosdr.irrelevant': {'$exists': false} });
+    return Points.find({ services: this._id});
   }
 });
 

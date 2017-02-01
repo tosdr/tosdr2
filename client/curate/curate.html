@@ -1,12 +1,33 @@
 <template name="curate">
     <h2>{{_ "curate"}} {{service}}</h2>
 
-    <ul>
+    <table border="1">
+      <tr>
+        <td><b>ID</b></td>
+        <td><b>needModeration</b></td>
+        <td><b>irrelevant</b></td>
+        <td><b>discussion</b></td>
+        <td><b>topics</b></td>
+        <td><b>case</b></td>
+        <td><b>point</b></td>
+        <td><b>score</b></td>
+        <td><b>title</b></td>
+      </tr>
       {{#each points}}
         {{> point}}
       {{/each}}
-    </ul>
+    </table>
 </template>
 <template name="point">
-  <li>{{_id}}: {{title}}</li>
+  <tr>
+    <td><a href="{{pathFor 'editPoint'}}">{{_id}}</a></td>
+    <td>{{needModeration}}</td>
+    <td>{{tosdr.irrelevant}}</td>
+    <td>{{discussion}}</td>
+    <td>{{topics}}</td>
+    <td>{{tosdr.case}}</td>
+    <td>{{tosdr.point}}</td>
+    <td>{{tosdr.score}}</td>
+    <td>{{title}}</td>
+  </tr>
 </template>
